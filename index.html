@@ -1,359 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parth Malavia - Portfolio</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Arial", sans-serif;
-      }
-
-      body {
-        background-color: #f0f2f5;
-        color: #333;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      header {
-        background: linear-gradient(135deg, #2c3e50, #3498db);
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
-        border-radius: 10px;
-      }
-
-      header h1 {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-      }
-
-      header p {
-        font-size: 1.2em;
-        margin: 5px 0;
-      }
-
-      nav {
-        background-color: #fff;
-        padding: 15px;
-        margin: 20px 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-      }
-
-      nav ul li {
-        margin: 0 20px;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        font-size: 1.1em;
-        transition: color 0.3s;
-      }
-
-      nav ul li a:hover {
-        color: #3498db;
-      }
-
-      section {
-        background-color: #fff;
-        padding: 30px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      section h2 {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-        color: #2c3e50;
-        border-bottom: 2px solid #3498db;
-        padding-bottom: 10px;
-      }
-
-      .skills-grid,
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-      }
-
-      .skill-card,
-      .project-card,
-      .experience-card {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 8px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        cursor: pointer;
-      }
-
-      .skill-card:hover,
-      .project-card:hover,
-      .experience-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .skill-card h3,
-      .project-card h3,
-      .experience-card h3 {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-        color: #2c3e50;
-      }
-
-      .contact-links a {
-        color: #3498db;
-        text-decoration: none;
-        margin-right: 15px;
-        font-size: 1.1em;
-      }
-
-      .contact-links a:hover {
-        text-decoration: underline;
-      }
-
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #2c3e50;
-        color: white;
-        border-radius: 8px;
-        margin-top: 20px;
-      }
-
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-          align-items: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
 
-        nav ul li {
-          margin: 10px 0;
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
         }
 
         header h1 {
-          font-size: 2em;
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
-      }
+
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .skills-grid, .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card, .project-card, .experience-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .skill-card:hover, .project-card:hover, .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card h3, .project-card h3, .experience-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .contact-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>Parth Malavia</h1>
-      <p>Software Engineer | Ahmedabad, India</p>
-      <p class="contact-links">
-        <a href="mailto:parthmalavia225@gmail.com">parthmalavia225@gmail.com</a>
-        | <a href="tel:+919687698265">+91-96876-98265</a> |
-        <a
-          href="https://linkedin.com/in/parth-malavia-600300171"
-          target="_blank"
-          >LinkedIn</a
-        >
-        |
-        <a href="https://github.com/parthmalavia" target="_blank">GitHub</a>
-      </p>
+        <h1>Parth Malavia</h1>
+        <p>Software Engineer | Ahmedabad, India</p>
+        <p class="contact-links">
+            <a href="mailto:parthmalavia225@gmail.com">parthmalavia225@gmail.com</a> |
+            <a href="tel:+919687698265">+91-96876-98265</a> |
+            <a href="https://linkedin.com/in/parth-malavia-600300171" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/parthmalavia" target="_blank">GitHub</a>
+        </p>
     </header>
 
     <nav>
-      <ul>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-      </ul>
+        <button class="nav-toggle">☰</button>
+        <ul>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+        </ul>
     </nav>
 
     <div class="container">
-      <section id="summary">
-        <h2>Summary</h2>
-        <p>
-          Dynamic software engineer with expertise in Python and a strong
-          interest in GoLang. Experienced in building robust ETL solutions, API
-          migrations, and utility tools. Skilled in integrating data across
-          platforms, developing scalable applications, and conducting
-          comprehensive testing. Passionate about problem-solving and delivering
-          high-quality solutions while exploring new technologies.
-        </p>
-      </section>
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Dynamic software engineer with expertise in Python and a strong interest in GoLang. Experienced in building robust ETL solutions, API migrations, and utility tools. Skilled in integrating data across platforms, developing scalable applications, and conducting comprehensive testing. Passionate about problem-solving and delivering high-quality solutions while exploring new technologies.</p>
+        </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h3>Programming Languages</h3>
-            <p>Python, GoLang</p>
-          </div>
-          <div class="skill-card">
-            <h3>Frameworks & Tools</h3>
-            <p>FastAPI, Django, Docker, CircleCI, Jenkins</p>
-          </div>
-          <div class="skill-card">
-            <h3>Databases</h3>
-            <p>Postgres, MongoDB</p>
-          </div>
-          <div class="skill-card">
-            <h3>Cloud Platforms</h3>
-            <p>AWS, GCP</p>
-          </div>
-          <div class="skill-card">
-            <h3>Other</h3>
-            <p>Git, Bitbucket, Problem-Solving, Jira</p>
-          </div>
-        </div>
-      </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <p>Python, GoLang</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Frameworks & Tools</h3>
+                    <p>FastAPI, Django, Docker, CircleCI, Jenkins</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Databases</h3>
+                    <p>Postgres, MongoDB</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud Platforms</h3>
+                    <p>AWS, GCP</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Other</h3>
+                    <p>Git, Bitbucket, Problem-Solving, Jira</p>
+                </div>
+            </div>
+        </section>
 
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-card">
-          <h3>
-            Software Engineer - Cast Data, Ahmedabad, India (Jan 2022 - Present)
-          </h3>
-          <ul>
-            <li>
-              Led the design and implementation of a robust ETL system, managing
-              a team of four, enabling seamless synchronization between SQL
-              (Postgres) and NoSQL (MongoDB) databases.
-            </li>
-            <li>
-              Developed a utility tool to automate Google Parser development,
-              reducing manual effort through automated log parsing and
-              verification.
-            </li>
-            <li>
-              Built Talend-Stitch integrations for seamless data movement to
-              data warehouses, with rigorous testing for reliability.
-            </li>
-            <li>
-              Led Google Chronicle API migration, implementing new APIs with
-              feature flagging and comprehensive testing.
-            </li>
-            <li>
-              Developed integrations for Google Chronicle and Power BI using
-              Python, deployed on AWS and GCP.
-            </li>
-            <li>
-              Improved test coverage by 30-40% for a SaaS cybersecurity product
-              through automation test cases, deployed via CircleCI.
-            </li>
-            <li>
-              Mentored two interns in test case development and technical
-              problem-solving.
-            </li>
-          </ul>
-        </div>
-      </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3>Software Engineer - Cast Data, Ahmedabad, India (Jan 2022 - Present)</h3>
+                <ul>
+                    <li>Led the design and implementation of a robust ETL system, managing a team of four, enabling seamless synchronization between SQL (Postgres) and NoSQL (MongoDB) databases.</li>
+                    <li>Developed a utility tool to automate Google Parser development, reducing manual effort through automated log parsing and verification.</li>
+                    <li>Built Talend-Stitch integrations for seamless data movement to data warehouses, with rigorous testing for reliability.</li>
+                    <li>Led Google Chronicle API migration, implementing new APIs with feature flagging and comprehensive testing.</li>
+                    <li>Developed integrations for Google Chronicle and Power BI using Python, deployed on AWS and GCP.</li>
+                    <li>Improved test coverage by 30-40% for a SaaS cybersecurity product through automation test cases, deployed via CircleCI.</li>
+                    <li>Mentored two interns in test case development and technical problem-solving.</li>
+                </ul>
+            </div>
+        </section>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>MIS-Insights (ETL System)</h3>
-            <p>
-              Designed an end-to-end ETL solution to track historical data
-              changes across SQL and NoSQL databases, enabling seamless
-              synchronization and conversion.
-            </p>
-          </div>
-          <div class="project-card">
-            <h3>Chat Application</h3>
-            <p>
-              Built a real-time chat application using ReactJS, Django,
-              RabbitMQ, and django channels, with WebSocket functionality and an
-              intuitive MUI interface.
-            </p>
-          </div>
-          <div class="project-card">
-            <h3>Chat Server</h3>
-            <p>
-              Developed a chat server using GoLang and Angular, supporting
-              anonymous user connections with randomized names and maintainable
-              code.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>MIS-Insights (ETL System)</h3>
+                    <p>Designed an end-to-end ETL solution to track historical data changes across SQL and NoSQL databases, enabling seamless synchronization and conversion.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Chat Application</h3>
+                    <p>Built a real-time chat application using ReactJS, Django, RabbitMQ, and django channels, with WebSocket functionality and an intuitive MUI interface.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Chat Server</h3>
+                    <p>Developed a chat server using GoLang and Angular, supporting anonymous user connections with randomized names and maintainable code.</p>
+                </div>
+            </div>
+        </section>
 
-      <section id="education">
-        <h2>Education</h2>
-        <p>
-          <strong>B.E., Information Technology</strong><br />L.D. College of
-          Engineering, Ahmedabad, India<br />GPA: 8.29
-        </p>
-      </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p><strong>B.E., Information Technology</strong><br>L.D. College of Engineering, Ahmedabad, India<br>GPA: 8.29</p>
+        </section>
 
-      <section id="certifications">
-        <h2>Certifications</h2>
-        <ul>
-          <li>Machine Learning - Stanford University (Coursera)</li>
-          <li>Problem Solving - HackerRank</li>
-        </ul>
-      </section>
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Machine Learning - Stanford University (Coursera)</li>
+                <li>Problem Solving - HackerRank</li>
+            </ul>
+        </section>
     </div>
 
     <footer>
-      <p>&copy; 2025 Parth Malavia. All rights reserved.</p>
+        <p>© 2025 Parth Malavia. All rights reserved.</p>
     </footer>
 
     <script>
-      // Smooth scrolling for nav links
-      document.querySelectorAll("nav ul li a").forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href").substring(1);
-          const targetElement = document.getElementById(targetId);
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
+        // Smooth scrolling for nav links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                // Close the dropdown menu on mobile after clicking a link
+                if (window.innerWidth <= 768) {
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
         });
-      });
 
-      // Add animation on scroll
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = 1;
-              entry.target.style.transform = "translateY(0)";
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
+        // Toggle dropdown menu on mobile
+        document.querySelector('.nav-toggle').addEventListener('click', function () {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
 
-      document
-        .querySelectorAll(
-          "section, .skill-card, .project-card, .experience-card"
-        )
-        .forEach((element) => {
-          element.style.opacity = 0;
-          element.style.transform = "translateY(20px)";
-          element.style.transition = "opacity 0.5s, transform 0.5s";
-          observer.observe(element);
+        // Add animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .skill-card, .project-card, .experience-card').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(element);
         });
     </script>
-  </body>
+</body>
 </html>
